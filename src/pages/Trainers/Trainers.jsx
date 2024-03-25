@@ -21,16 +21,11 @@ import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import { useNavigate } from "react-router-dom";
+import AddTrainers from "./AddTrainers";
+import { NavLink } from "react-router-dom";
 
 //table data
 export default function Trainers() {
-  const navigate = useNavigate();
-
-  const handleButtonClick = () => {
-    navigate("/AddTrainers"); // Navigate to the '/AddTrainers' route
-  };
-
   const columns = [
     { id: "id", name: "Id" },
     { id: "first_name", name: "First Name" },
@@ -105,13 +100,11 @@ export default function Trainers() {
 
           {/*add new button */}
           <Box textAlign="right" mb={2} mr={1} mt={2}>
-            <Button
-              variant="contained"
-              startIcon={<AddIcon />}
-              onClick={handleButtonClick}
-            >
-              Add New
-            </Button>
+            <NavLink to="/addTrainers">
+              <Button variant="contained" startIcon={<AddIcon />}>
+                Add New
+              </Button>
+            </NavLink>
           </Box>
         </Box>
 
