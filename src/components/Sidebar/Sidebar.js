@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
 import { NavLink } from "react-router-dom";
-import Members from "../../Members";
 
 const Sidebar = () => {
   const [show, setShow] = useState(false);
